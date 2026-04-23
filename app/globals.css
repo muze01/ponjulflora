@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FAF6EF;
+  --terracotta: #C4622D;
+  --rust: #8B3A1A;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --forest: #1B4D3E;
+  --brown-dark: #2C1810;
+
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-cormorant: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-jost: 'Jost', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  color: var(--brown-dark);
+  font-family: var(--font-jost);
+}
+
+.font-display { font-family: var(--font-playfair) !important; }
+.font-script  { font-family: var(--font-cormorant) !important; }
+.font-body    { font-family: var(--font-jost) !important; }
+
+/* Color utilities */
+.text-cream        { color: var(--cream); }
+.text-terracotta   { color: var(--terracotta); }
+.text-gold         { color: var(--gold); }
+.text-gold-light   { color: var(--gold-light); }
+.text-forest       { color: var(--forest); }
+.text-brown-dark   { color: var(--brown-dark); }
+.text-warm-brown   { color: #6B3A2A; }
+.bg-forest         { background-color: var(--forest); }
+.border-forest     { border-color: var(--forest); }
+.bg-white          { background-color: #ffffff; }
+.border-gold\/20   { border-color: rgba(201,168,76,0.20); }
+.bg-terracotta\/10 { background-color: rgba(196,98,45,0.10); }
+.bg-gold\/20       { background-color: rgba(201,168,76,0.20); }
+.fill-terracotta   { fill: var(--terracotta); }
+
+/* Decorative divider */
+.divider { display: flex; align-items: center; gap: 1rem; }
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* Gold shimmer text */
+.gold-text {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ornamental ring */
+.ring-ornament {
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* Scroll fade-in */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Countdown block */
+.countdown-block {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  backdrop-filter: blur(4px);
+}
